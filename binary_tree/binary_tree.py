@@ -21,7 +21,6 @@ class BinaryTree:
         BinaryTree.preorder(root.right)
 
     def push(self, element):
-        print(element)
         if self.root is None:
             self.root = Node(element)
             return
@@ -31,8 +30,6 @@ class BinaryTree:
 
             while len(q):
                 node = q.popleft()
-                # print(node.data)
-
                 if node.left is None:
                     node.left = Node(element)
                     break
