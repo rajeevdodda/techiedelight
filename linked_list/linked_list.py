@@ -17,13 +17,13 @@ class LinkedList:
         return self.size == 0
 
     def push(self, element):
-        node = Node(element)
+        node_temp = Node(element)
 
         if self.head is None:
-            self.head = node
-            self.tail = node
+            self.head = node_temp
+            self.tail = node_temp
         else:
-            self.tail.next, self.tail = node, node
+            self.tail.next, self.tail = node_temp, node_temp
 
     def remove_head(self):
         if self.head:
@@ -32,6 +32,14 @@ class LinkedList:
             return head
         else:
             return None
+
+    def display(self):
+        temp = self.head
+
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+
 
 
 if __name__ == "__main__":
